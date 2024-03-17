@@ -11,7 +11,7 @@ Disk Image Caching Demo is a Swift library that demonstrates how to implement di
 
 ## Usage
 
-To use the Disk Image Caching Demo library in your Swift project, follow these steps:
+To use the Image Caching Demo ImageLoader in your Swift project, follow these steps:
 
 1. Create an instance of ImageLoader:
 
