@@ -19,8 +19,6 @@ class DiskStorage {
     private let storageDirectory: URL
     private let fileAccessQueue = DispatchQueue(label: "com.example.diskStorage")
     private let maybeCachedCheckingQueue = DispatchQueue(label: "com.example.diskStorage.maybeCachedCheckingQueue")
-    let cacheManager = ImageCacheManager()
-    var imageCacheMetadata: [String: ImageMetadata]? = [:]
     var maybeCached : Set<String>?
 
     init() {
@@ -84,10 +82,6 @@ class DiskStorage {
                 }
             }
         }
-        // update meta data file
-//        maybeCachedCheckingQueue.async {
-//            self.cacheMetaData(key: key)
-//        }
     }
 
     func removeObject(forKey key: String) {
@@ -137,26 +131,5 @@ class DiskStorage {
         return key
     }
 
-    private func setupCacheChecking() {
-        maybeCachedCheckingQueue.async {
-            let log = OSLog(subsystem: "com.btech.retail", category: "Performance")
-
-            os_signpost(.begin, log: log, name: "loadFile", signpostID: OSSignpostID(log: log))
-
-            defer {
-                os_signpost(.end, log: log, name: "loadFile", signpostID: OSSignpostID(log: log))
-            }
-
-            self.imageCacheMetadata = self.cacheManager.loadMetadataFromDiskCache()
-        }
-    }
    
-    func cacheMetaData(key: String) {
-        let lastUsed = Int(Date().timeIntervalSince1970)
-        imageCacheMetadata?[key] = .init(
-            lastUsed: lastUsed,
-            relevance: .inCart,
-            sizeInKiloBytes: 10
-        )
-    }
 }

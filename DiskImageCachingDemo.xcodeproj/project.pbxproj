@@ -21,13 +21,11 @@
 		5D2CD4502B90B8470098F4BA /* movies.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D2CD44F2B90B8470098F4BA /* movies.json */; };
 		5D2CD4522B90B8670098F4BA /* LRUDiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2CD4512B90B8670098F4BA /* LRUDiskCache.swift */; };
 		5D2CD4542B90B8730098F4BA /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2CD4532B90B8730098F4BA /* DiskStorage.swift */; };
-		5D2CD4562B90B8AF0098F4BA /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2CD4552B90B8AF0098F4BA /* LRUCache.swift */; };
+		5D2CD4562B90B8AF0098F4BA /* LRUMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2CD4552B90B8AF0098F4BA /* LRUMemoryCache.swift */; };
 		5D2CD4582B90B9480098F4BA /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2CD4572B90B9480098F4BA /* ImageCache.swift */; };
-		5D68C0C72BA0644200371016 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D68C0C62BA0644200371016 /* ImageCacheManager.swift */; };
 		5D68C0C92BA0794000371016 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D68C0C82BA0794000371016 /* Products.json */; };
 		5D68C0CB2BA0799900371016 /* product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D68C0CA2BA0799900371016 /* product.swift */; };
 		5D68C0CD2BA07B8B00371016 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D68C0CC2BA07B8B00371016 /* ProductCell.swift */; };
-		5D68C0D02BA3159000371016 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5D68C0CF2BA3159000371016 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,9 +44,8 @@
 		5D2CD44F2B90B8470098F4BA /* movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movies.json; sourceTree = "<group>"; };
 		5D2CD4512B90B8670098F4BA /* LRUDiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUDiskCache.swift; sourceTree = "<group>"; };
 		5D2CD4532B90B8730098F4BA /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
-		5D2CD4552B90B8AF0098F4BA /* LRUCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCache.swift; sourceTree = "<group>"; };
+		5D2CD4552B90B8AF0098F4BA /* LRUMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUMemoryCache.swift; sourceTree = "<group>"; };
 		5D2CD4572B90B9480098F4BA /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		5D68C0C62BA0644200371016 /* ImageCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		5D68C0C82BA0794000371016 /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
 		5D68C0CA2BA0799900371016 /* product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = product.swift; sourceTree = "<group>"; };
 		5D68C0CC2BA07B8B00371016 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
@@ -59,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D68C0D02BA3159000371016 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,11 +126,10 @@
 		5D2CD4482B90B8370098F4BA /* LRUCache */ = {
 			isa = PBXGroup;
 			children = (
-				5D68C0C62BA0644200371016 /* ImageCacheManager.swift */,
 				5D2CD4492B90B83D0098F4BA /* DoublyLinkedList.swift */,
 				5D2CD4512B90B8670098F4BA /* LRUDiskCache.swift */,
 				5D2CD4532B90B8730098F4BA /* DiskStorage.swift */,
-				5D2CD4552B90B8AF0098F4BA /* LRUCache.swift */,
+				5D2CD4552B90B8AF0098F4BA /* LRUMemoryCache.swift */,
 				5D2CD4572B90B9480098F4BA /* ImageCache.swift */,
 			);
 			path = LRUCache;
@@ -174,7 +169,6 @@
 			);
 			name = DiskImageCachingDemo;
 			packageProductDependencies = (
-				5D68C0CF2BA3159000371016 /* Kingfisher */,
 			);
 			productName = DiskImageCachingDemo;
 			productReference = 5D2CD42B2B90B8090098F4BA /* DiskImageCachingDemo.app */;
@@ -205,7 +199,6 @@
 			);
 			mainGroup = 5D2CD4222B90B8090098F4BA;
 			packageReferences = (
-				5D68C0CE2BA3159000371016 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 5D2CD42C2B90B8090098F4BA /* Products */;
 			projectDirPath = "";
@@ -235,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D2CD4562B90B8AF0098F4BA /* LRUCache.swift in Sources */,
+				5D2CD4562B90B8AF0098F4BA /* LRUMemoryCache.swift in Sources */,
 				5D2CD4582B90B9480098F4BA /* ImageCache.swift in Sources */,
 				5D2CD4312B90B80A0098F4BA /* ContentView.swift in Sources */,
 				5D68C0CB2BA0799900371016 /* product.swift in Sources */,
@@ -244,7 +237,6 @@
 				5D2CD4462B90B8320098F4BA /* MovieCell.swift in Sources */,
 				5D2CD44A2B90B83D0098F4BA /* DoublyLinkedList.swift in Sources */,
 				5D2CD4422B90B82D0098F4BA /* MoviePosterViewModel.swift in Sources */,
-				5D68C0C72BA0644200371016 /* ImageCacheManager.swift in Sources */,
 				5D2CD44D2B90B8430098F4BA /* ImageLoader.swift in Sources */,
 				5D2CD4472B90B8320098F4BA /* MoviesView.swift in Sources */,
 				5D2CD4412B90B82D0098F4BA /* Movie.swift in Sources */,
@@ -454,25 +446,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5D68C0CE2BA3159000371016 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.11.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5D68C0CF2BA3159000371016 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D68C0CE2BA3159000371016 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D2CD4232B90B8090098F4BA /* Project object */;
 }

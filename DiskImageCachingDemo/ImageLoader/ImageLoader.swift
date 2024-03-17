@@ -1,7 +1,6 @@
 import Foundation
 import UIKit.UIImage
 import Combine
-import Kingfisher
 public final class ImageLoader {
     public static let shared = ImageLoader()
     

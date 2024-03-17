@@ -31,12 +31,12 @@ public enum CacheType {
 }
 public class ImageCache: ImageCacheType {
 
-    private var memoryCache: LRUCache<String, CodableImage>
+    private var memoryCache: LRUMemoryCache<String, CodableImage>
     private var diskCache: LRUDiskCache<String, CodableImage>
     private let lock = NSLock()
 
     public init() {
-        self.memoryCache = LRUCache<String, CodableImage>(capacity: 20)
+        self.memoryCache = LRUMemoryCache<String, CodableImage>(capacity: 20)
         self.diskCache = LRUDiskCache<String, CodableImage>()
     }
 

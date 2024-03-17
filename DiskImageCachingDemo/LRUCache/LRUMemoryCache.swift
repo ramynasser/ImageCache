@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class LRUCache<T: Hashable, U> {
+class LRUMemoryCache<T: Hashable, U> {
     
     private var capacity: UInt
     private var linkedList = DoublyLinkedList<CachePayload<T, U>>()
