@@ -1,6 +1,6 @@
 # Image Caching 
 
-Disk Image Caching Demo is a Swift library that demonstrates how to implement disk and memory caching for images retrieved from remote URLs using an LRU (Least Recently Used) caching strategy.
+Image Caching Demo is a Swift library that demonstrates how to implement disk and memory caching for images retrieved from remote URLs using an LRU (Least Recently Used) caching strategy.
 
 ## Features
 
